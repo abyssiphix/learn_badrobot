@@ -1,0 +1,38 @@
+!pip install numpy scipy shapely astunparse pygments openai > /dev/null 2>&1
+!pip install imageio==2.4.1 imageio-ffmpeg pybullet moviepy
+
+import os
+import pybullet
+import pybullet_data
+import numpy as np
+import threading
+import copy
+import openai
+import cv2
+from google.colab.patches import cv2_imshow
+from moviepy.editor import ImageSequenceClip
+
+# imports for LMPs
+import shapely
+import ast
+import astunparse
+from time import sleep
+from shapely.geometry import *
+from shapely.affinity import *
+from openai.error import RateLimitError, APIConnectionError
+from pygments import highlight
+from pygments.lexers import PythonLexer
+from pygments.formatters import TerminalFormatter
+
+openai.api_key = openai_api_key
+
+# Download PyBullet assets.
+if not os.path.exists('ur5e/ur5e.urdf'):
+  !gdown --id 1Cc_fDSBL6QiDvNT4dpfAEbhbALSVoWcc
+  !gdown --id 1yOMEm-Zp_DL3nItG9RozPeJAmeOldekX
+  !gdown --id 1GsqNLhEl9dd4Mc3BM0dX3MibOI1FVWNM
+  !unzip ur5e.zip
+  !unzip robotiq_2f_85.zip
+  !unzip bowl.zip
+
+!nvidia-smi  # Show useful GPU info.

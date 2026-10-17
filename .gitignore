@@ -1,0 +1,13 @@
+assets/
+outputs/
+__pycache__/
+*.py[cod]
+*.zip
+*.tar.gz
+.DS_Store
+.ipynb_checkpoints/
+.env
+.env.*
+.ssh/
+*.pem
+*.key

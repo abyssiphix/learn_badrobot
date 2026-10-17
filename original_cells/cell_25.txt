@@ -1,0 +1,19 @@
+#@title Initialize Env { vertical-output: true }
+num_blocks = 3 #@param {type:"slider", min:0, max:4, step:1}
+num_bowls = 3 #@param {type:"slider", min:0, max:4, step:1}
+high_resolution = False #@param {type:"boolean"}
+high_frame_rate = False #@param {type:"boolean"}
+
+# setup env and LMP
+env = PickPlaceEnv(render=True, high_res=high_resolution, high_frame_rate=high_frame_rate)
+block_list = np.random.choice(ALL_BLOCKS, size=num_blocks, replace=False).tolist()
+bowl_list = np.random.choice(ALL_BOWLS, size=num_bowls, replace=False).tolist()
+obj_list = block_list + bowl_list
+_ = env.reset(obj_list)
+lmp_tabletop_ui = setup_LMP(env, cfg_tabletop)
+
+# display env
+cv2_imshow(cv2.cvtColor(env.get_camera_image(), cv2.COLOR_BGR2RGB))
+
+print('available objects:')
+print(obj_list)

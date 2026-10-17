@@ -1,0 +1,13 @@
+#@title Interactive Demo { vertical-output: true }
+
+user_input = 'put the blue block on the yellow bowl' #@param {allow-input: true, type:"string"}
+
+env.cache_video = []
+
+print('Running policy and recording video...')
+lmp_tabletop_ui(user_input, f'objects = {env.object_list}')
+
+# render video
+if env.cache_video:
+  rendered_clip = ImageSequenceClip(env.cache_video, fps=35 if high_frame_rate else 25)
+  display(rendered_clip.ipython_display(autoplay=1, loop=1))

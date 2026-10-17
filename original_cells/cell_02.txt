@@ -1,0 +1,2 @@
+openai_api_key = 'YOUR KEY HERE'
+model_name = 'code-davinci-002' # 'text-davinci-002'

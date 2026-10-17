@@ -1,0 +1,39 @@
+{
+  "repository": "https://github.com/google-research/google-research",
+  "commit": "3ef52111c1fabc301880818f5a547570e926a76b",
+  "cells": [
+    5,
+    12,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    21,
+    23
+  ],
+  "cell_sha256": {
+    "5": "b4f1d62b8f9b2b862facf77ac662a0b0e5f42c06863bb44f26c3485b01f94225",
+    "12": "377a5deb351b4643bed8c76e1db5795ef031d7f8bebc8466e2e4ee1750b07c83",
+    "14": "d878f9eca4d1b8a4f48677176175e31ca2bc52a2927da2724c0f7800b4def9da",
+    "15": "5a6b8a8b22ea787064adef2ab592967c239aa3c14ff0225346bf63418b8a188b",
+    "16": "5f3863d2fb577a82f0894aaadb578d264c74f6bf6b9979b1f8fe0e4af51191a2",
+    "17": "5788d5cb7723b7183399bb5a06b39a913ba64c70d72de187bf7710502fefcc56",
+    "18": "be155cfd34a3a0a15730d9031fe7dba5882dabe2a5b9b9b4c47b684901b0ae37",
+    "19": "b859fbe0011fc30b74f5382b14dd950494fed091eeb7989a8a2b47feb75b9275",
+    "21": "de46a64d6888bdc12b07b809a4d8370bf4e439ad7fa0a3c82f8619084980efe4",
+    "23": "9adfce13f3afa9b2d4ddbd11ee027aa6a980ee72fccf183210a114ff6eaf664d"
+  },
+  "notebook_sha256": "2306281e405b0642400c039dde01684fd200188821eb8cbf243d00b140d2eb72",
+  "changes": [
+    "Import the extracted cap_env.COLORS; replace Colab setup with module imports.",
+    "Inject a legacy Completion facade backed by DeepSeek chat completions.",
+    "Add a chat system instruction requesting only a Python continuation.",
+    "Keep original few-shot prompt strings, LMP classes, wrapper and config values.",
+    "Replace unbounded retry sleeps on API errors with immediate re-raise.",
+    "Select model at runtime; disable legacy automatic Edit calls.",
+    "Strip a complete Markdown fence, logging raw and cleaned output separately."
+  ],
+  "warning": "The original exec_safe helper is not a security sandbox."
+}
